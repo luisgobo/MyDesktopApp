@@ -11,13 +11,13 @@ namespace Presentation.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public bool Enabled { get; set; }
+        public bool Status { get; set; }
 
-        public Restaurant(string name, string description, bool enabled= true) 
+        public Restaurant(string name, string description, bool status= true) 
         { 
             Name = name;
             Description = description;
-            Enabled = enabled;       
+            Status = status;       
         }
 
     }

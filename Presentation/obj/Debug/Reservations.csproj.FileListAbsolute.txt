@@ -1,0 +1,10 @@
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Reservations.csproj.AssemblyReference.cache
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Reservations.csproj.GenerateResource.cache
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Reservations.csproj.CoreCompileInputs.cache
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\bin\Debug\Presentation.exe
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\bin\Debug\Presentation.pdb
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Presentation.Presentation.MainMenu.resources
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Presentation.exe
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Presentation.pdb
+C:\dev\Game_Mods\Cities_Skylines\desktoptest\Presentation\obj\Debug\Presentation.Presentation.RestaurantUI.resources

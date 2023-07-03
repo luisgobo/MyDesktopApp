@@ -12,7 +12,7 @@ namespace Presentation.Presentation
     {
 
         RestaurantHandler rest;
-        DataGridViewTextBoxColumn textBoxColumn = null;
+        //DataGridViewTextBoxColumn textBoxColumn = null;
 
         public RestaurantUI()
         {

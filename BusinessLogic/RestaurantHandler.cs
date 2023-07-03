@@ -1,16 +1,13 @@
-﻿using Presentation.DataAccess;
-using Presentation.Entities;
+﻿using DataAccess;
+using Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
-namespace Presentation.BusinessLogic
+namespace BusinessLogic
 {
     public class RestaurantHandler
     {
-        public void AddRestaurant(Restaurant restaurant) {
+        public void AddRestaurant(Restaurant restaurant)
+        {
             try
             {
                 RestaurantAD.AddRestaurant(restaurant);
@@ -19,16 +16,20 @@ namespace Presentation.BusinessLogic
             {
                 throw ex;
             }
-            
         }
-        public void EditRestaurant(Restaurant restaurant) {
+
+        public void EditRestaurant(Restaurant restaurant)
+        {
             RestaurantAD.EditRestaurant(restaurant);
         }
-        public void Deleteestaurant(Restaurant restaurant) {
+
+        public void Deleteestaurant(Restaurant restaurant)
+        {
             RestaurantAD.DeleteRestaurant(restaurant);
         }
 
-        public Restaurant[] GetRestaurantById(int restaurantId) {         
+        public Restaurant[] GetRestaurantById(int restaurantId)
+        {
             return RestaurantAD.ListRestaurants();
         }
 

@@ -1,16 +1,12 @@
-﻿using Presentation.BusinessLogic;
-using Presentation.Entities;
+﻿using BusinessLogic;
+using Entities;
 using System;
-using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace Presentation.Presentation
 {
     public partial class RestaurantUI : Form
     {
-
         RestaurantHandler rest;
         //DataGridViewTextBoxColumn textBoxColumn = null;
 
@@ -22,7 +18,6 @@ namespace Presentation.Presentation
             rest = new RestaurantHandler();
             InitializeDataGridView();
             LoadData();
-
         }
 
         void InitializeDataGridView()
@@ -47,7 +42,6 @@ namespace Presentation.Presentation
             dgvRestaurantes.Columns["Status"].DataPropertyName = "Status";
             dgvRestaurantes.Columns["Status"].Width = 60;
 
-
             LoadData();
 
             //// Add columns to the DataGridView, binding them to the
@@ -59,7 +53,7 @@ namespace Presentation.Presentation
 
             //// Bind the DataGridView to its own Columns collection.
             //dgvRestaurantes.AutoGenerateColumns = false;
-            ////dgvRestaurantes.DataSource = dgvRestaurantes.Columns;            
+            ////dgvRestaurantes.DataSource = dgvRestaurantes.Columns;
             //dgvRestaurantes.DataSource = rest.ListRestaurants();
             //dgvRestaurantes.Refresh();
 
@@ -90,6 +84,7 @@ namespace Presentation.Presentation
             bool[] restaurantState = { true, false };
             cbxActivo.DataSource = restaurantState;
         }
+
         void LoadData()
         {
             dgvRestaurantes.DataSource = rest.ListRestaurants();

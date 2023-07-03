@@ -1,20 +1,15 @@
-﻿using Presentation.Entities;
-using Presentation.Presentation;
+﻿using Entities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 
-namespace Presentation.DataAccess
+namespace DataAccess
 {
     public static class RestaurantAD
     {
         static Restaurant[] restaurants = new Restaurant[20];
 
-
-        public static void AddRestaurant(Restaurant restaurant) {
-            
+        public static void AddRestaurant(Restaurant restaurant)
+        {
             int index = 0;
             bool isFull = true;
 
@@ -36,14 +31,14 @@ namespace Presentation.DataAccess
                 else
                     throw new Exception("La lista esta llena, elimine un registro para guardar uno nuevo");
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
-            
-            
-
         }
-        public static void EditRestaurant(Restaurant restaurant) {
+
+        public static void EditRestaurant(Restaurant restaurant)
+        {
             //Restaurant res= restaurants.Where(x => x.Id == restaurant.Id).FirstOrDefault();
             int index = Array.IndexOf(restaurants, restaurant);
             try
@@ -52,25 +47,25 @@ namespace Presentation.DataAccess
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-
         }
-        public static void DeleteRestaurant(Restaurant restaurant) {
+
+        public static void DeleteRestaurant(Restaurant restaurant)
+        {
             int index = Array.IndexOf(restaurants, restaurant);
             restaurants[index] = null;
             //Restaurant res = restaurants.Where(x => x.Id == restaurant.Id).FirstOrDefault();
         }
-        public static Restaurant[] ListRestaurants() {
-            
+
+        public static Restaurant[] ListRestaurants()
+        {
             return restaurants;
         }
+
         public static Restaurant GetRestaurants(int restaurantId)
         {
             return restaurants.Where(x => x.Id == restaurantId).FirstOrDefault();
         }
-
     }
 }

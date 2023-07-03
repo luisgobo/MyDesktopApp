@@ -43,27 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\RestaurantHandler.cs" />
-    <Compile Include="DataAccess\RestaurantAD.cs" />
-    <Compile Include="Entities\Restaurant.cs" />
-    <Compile Include="Presentation\MainMenu.cs">
+    <Compile Include="Screens\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\MainMenu.Designer.cs">
+    <Compile Include="Screens\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\RestaurantUI.cs">
+    <Compile Include="Screens\RestaurantUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\RestaurantUI.Designer.cs">
+    <Compile Include="Screens\RestaurantUI.Designer.cs">
       <DependentUpon>RestaurantUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\MainMenu.resx">
+    <EmbeddedResource Include="Screens\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\RestaurantUI.resx">
+    <EmbeddedResource Include="Screens\RestaurantUI.resx">
       <DependentUpon>RestaurantUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -85,6 +82,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{2d4758c4-d8c1-4ac8-bd7f-f8a823f6c979}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{168ffd3b-729c-4d06-83fe-59bc91676cf3}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

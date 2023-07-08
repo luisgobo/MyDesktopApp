@@ -2,6 +2,7 @@
 using Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BusinessLogic
 {
@@ -42,10 +43,7 @@ namespace BusinessLogic
 
         public List<Plato> ListarPlatosSeleccionados(List<int> listaIdsPlatosSeleccionados)
         {
-            int asd = 1;
-            return null;
-            //return PlatoAD.ListarPlatos();
-            //Comentario de prueba
+            return PlatoAD.ListarPlatos().Where(t => listaIdsPlatosSeleccionados.Contains(t.Id)).ToList();
         }
     }
 }

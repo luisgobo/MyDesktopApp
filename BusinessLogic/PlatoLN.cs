@@ -44,6 +44,7 @@ namespace BusinessLogic
         {
             return null;
             //return PlatoAD.ListarPlatos();
+            //Comentario de prueba
         }
     }
 }

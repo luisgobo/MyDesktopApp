@@ -43,7 +43,7 @@ namespace BusinessLogic
 
         public List<Plato> ListarPlatosSeleccionados(List<int> listaIdsPlatosSeleccionados)
         {
-            return PlatoAD.ListarPlatos().Where(t => listaIdsPlatosSeleccionados.Contains(t.Id)).ToList();
+            return PlatoAD.ListarPlatos().Where(plato => listaIdsPlatosSeleccionados.Contains(plato.Id)).ToList();
         }
     }
 }

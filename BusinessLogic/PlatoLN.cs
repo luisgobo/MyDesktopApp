@@ -42,6 +42,7 @@ namespace BusinessLogic
 
         public List<Plato> ListarPlatosSeleccionados(List<int> listaIdsPlatosSeleccionados)
         {
+            int asd = 1;
             return null;
             //return PlatoAD.ListarPlatos();
             //Comentario de prueba

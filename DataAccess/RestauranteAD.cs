@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public static class RestaurantAD
+    public static class RestauranteAD
     {
         static Restaurant[] restaurants = new Restaurant[20];
 
@@ -60,7 +60,11 @@ namespace DataAccess
 
         public static Restaurant[] ListRestaurants()
         {
-            return restaurants;
+            Restaurant[] restaurante = new Restaurant[2];
+            restaurante[0] = new Restaurant(1, "Restaurante Entre nubes", "El restaurante mas lindo del mundo", true) ;
+            restaurante[1] = new Restaurant(2,"Restaurante como en casa", "Mejor que la comida de la abuela", true);
+            return restaurante;
+            //return restaurants;
         }
 
         public static Restaurant GetRestaurants(int restaurantId)

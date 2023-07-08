@@ -53,6 +53,12 @@
     <Compile Include="Screens\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\PlatosDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\PlatosDialog.Designer.cs">
+      <DependentUpon>PlatosDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\RestaurantUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Screens\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\PlatosDialog.resx">
+      <DependentUpon>PlatosDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\RestaurantUI.resx">
       <DependentUpon>RestaurantUI.cs</DependentUpon>
@@ -90,13 +99,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+    <ProjectReference Include="..\BusinessLogic\LogicaNegocio.csproj">
       <Project>{2d4758c4-d8c1-4ac8-bd7f-f8a823f6c979}</Project>
-      <Name>BusinessLogic</Name>
+      <Name>LogicaNegocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Entities\Entities.csproj">
+    <ProjectReference Include="..\Entities\Entidades.csproj">
       <Project>{168ffd3b-729c-4d06-83fe-59bc91676cf3}</Project>
-      <Name>Entities</Name>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

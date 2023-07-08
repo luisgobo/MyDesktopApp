@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Entities
 {
@@ -9,19 +10,27 @@ namespace Entities
         public int Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Nombre { get; set; }
 
         [Required]
-        public string Description { get; set; }
+        public string Direccion { get; set; }
 
         [Required]
-        public bool Status { get; set; }
+        public bool Estado { get; set; }
 
-        public Restaurant(string name, string description, bool status = true)
-        {
-            Name = name;
-            Description = description;
-            Status = status;
+        private string fullInfo;
+        public string FullInfo { 
+            get {
+                return $"{Id}-{Nombre}-{Direccion}";
+            } 
         }
+
+        public Restaurant(int id, string name, string direccion, bool status = true)
+        {
+            Id = id;
+            Nombre = name;
+            Direccion = direccion;
+            Estado = status;
+        }        
     }
 }

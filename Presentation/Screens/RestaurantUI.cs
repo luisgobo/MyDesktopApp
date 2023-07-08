@@ -4,25 +4,33 @@ using System;
 using System.Windows.Forms;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.Linq;
+using Presentation.Screens;
 
 namespace Presentation.Presentation
 {
     public partial class RestaurantUI : Form
     {
-        RestaurantHandler rest;        
+        RestauranteLN rest;
+        PlatoLN platoLn = new PlatoLN();
+        List<Plato> platosSeleccionados = new List<Plato>();
 
         public RestaurantUI()
         {
             InitializeComponent();
 
             FillStateOptions();
-            rest = new RestaurantHandler();
+            rest = new RestauranteLN();
             InitializeDataGridView();
             LoadData();
         }
 
         void InitializeDataGridView()
         {
+
+            dgvRestaurantes.MultiSelect = true;
+            dgvRestaurantes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             dgvRestaurantes.ReadOnly = true;
             dgvRestaurantes.AutoGenerateColumns = false;
 
@@ -30,17 +38,17 @@ namespace Presentation.Presentation
             dgvRestaurantes.Columns["ID"].DataPropertyName = "ID";
             dgvRestaurantes.Columns["ID"].Width = 50;
 
-            dgvRestaurantes.Columns.Add("Name", "Name");
-            dgvRestaurantes.Columns["Name"].DataPropertyName = "Name";
-            dgvRestaurantes.Columns["Name"].Width = 120;
+            dgvRestaurantes.Columns.Add("Nombre", "Nombre");
+            dgvRestaurantes.Columns["Nombre"].DataPropertyName = "Nombre";
+            dgvRestaurantes.Columns["Nombre"].Width = 120;
 
-            dgvRestaurantes.Columns.Add("Description", "Description");
-            dgvRestaurantes.Columns["Description"].DataPropertyName = "Description";
-            dgvRestaurantes.Columns["Description"].Width = 120;
+            dgvRestaurantes.Columns.Add("Direccion", "Direccion");
+            dgvRestaurantes.Columns["Direccion"].DataPropertyName = "Direccion";
+            dgvRestaurantes.Columns["Direccion"].Width = 120;
 
-            dgvRestaurantes.Columns.Add("Status", "Status");
-            dgvRestaurantes.Columns["Status"].DataPropertyName = "Status";
-            dgvRestaurantes.Columns["Status"].Width = 60;
+            dgvRestaurantes.Columns.Add("Estado", "Estado");
+            dgvRestaurantes.Columns["Estado"].DataPropertyName = "Estado";
+            dgvRestaurantes.Columns["Estado"].Width = 60;
 
             LoadData();
 
@@ -62,7 +70,7 @@ namespace Presentation.Presentation
         {
             try
             {                
-                Restaurant restaurant = new Restaurant(txtNombre.Text, txtDescripcion.Text, (bool)cbxActivo.SelectedValue);
+                Restaurant restaurant = new Restaurant(0, txtDescripcion.Text, "Anywhere" ,(bool)cbxActivo.SelectedValue);
                 ValidationContext context = new ValidationContext(restaurant, null, null);
 
                 IList<ValidationResult> errors = new List<ValidationResult>();
@@ -125,5 +133,21 @@ namespace Presentation.Presentation
                 e.Value = "Unknown";
             }
         }
+
+        private void btnSelectedRows_Click(object sender, EventArgs e)
+        {
+            using (PlatosDialog platosDialog = new PlatosDialog())
+            {
+                DialogResult result = platosDialog.ShowDialog();
+                if (result == DialogResult.Cancel)
+                {
+                    var listaIdsPlatosSeleccionados = platosDialog.idPlatosSeleccionados;
+                    //Consultar Logica de negocios -> AccesoDatos mi lista de Ids Seleccionadas contra la lista existente, que retorne la lista de platos 
+                    platosSeleccionados = platoLn.ListarPlatosSeleccionados(listaIdsPlatosSeleccionados);
+                }
+            }
+
+        }
+        
     }
 }

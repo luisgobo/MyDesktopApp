@@ -4,13 +4,13 @@ using System;
 
 namespace BusinessLogic
 {
-    public class RestaurantHandler
+    public class RestauranteLN
     {
         public void AddRestaurant(Restaurant restaurant)
         {
             try
             {
-                RestaurantAD.AddRestaurant(restaurant);
+                RestauranteAD.AddRestaurant(restaurant);
             }
             catch (Exception ex)
             {
@@ -20,22 +20,22 @@ namespace BusinessLogic
 
         public void EditRestaurant(Restaurant restaurant)
         {
-            RestaurantAD.EditRestaurant(restaurant);
+            RestauranteAD.EditRestaurant(restaurant);
         }
 
         public void Deleteestaurant(Restaurant restaurant)
         {
-            RestaurantAD.DeleteRestaurant(restaurant);
+            RestauranteAD.DeleteRestaurant(restaurant);
         }
 
         public Restaurant[] GetRestaurantById(int restaurantId)
         {
-            return RestaurantAD.ListRestaurants();
+            return RestauranteAD.ListRestaurants();
         }
 
         public Restaurant[] ListRestaurants()
         {
-            return RestaurantAD.ListRestaurants();
+            return RestauranteAD.ListRestaurants();
         }
     }
 }

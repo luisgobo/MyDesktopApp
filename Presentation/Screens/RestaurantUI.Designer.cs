@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbxActivo = new System.Windows.Forms.ComboBox();
             this.dgvRestaurantes = new System.Windows.Forms.DataGridView();
+            this.btnSelectedRows = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRestaurantes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,22 @@
             this.dgvRestaurantes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvRestaurantes_CellFormatting);
             this.dgvRestaurantes.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvRestaurantes_ColumnAdded);
             // 
+            // btnSelectedRows
+            // 
+            this.btnSelectedRows.Location = new System.Drawing.Point(12, 99);
+            this.btnSelectedRows.Name = "btnSelectedRows";
+            this.btnSelectedRows.Size = new System.Drawing.Size(75, 42);
+            this.btnSelectedRows.TabIndex = 9;
+            this.btnSelectedRows.Text = "Mostrar Platos";
+            this.btnSelectedRows.UseVisualStyleBackColor = true;
+            this.btnSelectedRows.Click += new System.EventHandler(this.btnSelectedRows_Click);
+            // 
             // RestaurantUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 336);
+            this.Controls.Add(this.btnSelectedRows);
             this.Controls.Add(this.dgvRestaurantes);
             this.Controls.Add(this.cbxActivo);
             this.Controls.Add(this.label3);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxActivo;
         private System.Windows.Forms.DataGridView dgvRestaurantes;
+        private System.Windows.Forms.Button btnSelectedRows;
     }
 }
